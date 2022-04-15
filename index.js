@@ -2,7 +2,7 @@ const { Telegraf, Composer, Scenes: { BaseScene, Stage },session } = require('te
 
 //const mainScene = new BaseScene('mainScene')
 
-const token = '5168302603:AAGeKFBg3cBSyuuoPBpjYydwqQ67yz4xhzM'
+const token = ''
 
 const bot = new Telegraf(token ?? process.env.BOT_TOKEN ?? token)
 const Cron = require('./cron/cron')
