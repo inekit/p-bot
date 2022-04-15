@@ -56,12 +56,14 @@ const sendPenis = async (ctx)=> {
     //console.log(`3.reacted, chat_id: ${ctx.message?.chat.first_name ?? ctx.message?.chat.id}, ctx.from?.id: ${ctx.from.username ?? ctx.from.id}, lastScanDate: ${lastScanDate}, yesterdayDate:${yesterdayDate}`)
 
     //console.log(yesterdayDate <=lastScanDate)
-    if (yesterdayDate <=lastScanDate) 
-     return ctx.telegram.sendMessage(chat_id, `Померить можно только раз в сутки. Для вас следующая возможность будет ${dtime(new Date(lastScanDate.setDate(lastScanDate.getDate() + 1)))}`)
+    if (yesterdayDate <=lastScanDate) {
+        const penis_size = store.get(`avg-sizes.g${chat_id}.p${ctx.from?.id}`)?.last
+        return ctx.telegram.sendMessage(chat_id, `Размер члена сегодня - ${penis_size} см${valueSize(penis_size)}\n\nℹ️Померить можно только раз в сутки. Для вас следующая возможность будет ${dtime(new Date(lastScanDate.setDate(lastScanDate.getDate() + 1)))}`)
       .catch(e=>console.log("new error thrown sending no p")); 
+    }
    
     const p_size = randomP()
-    const msg = await ctx.telegram.sendMessage(chat_id, `Размер члена ${ctx.message?.from?.username ?? ""} - ${p_size} см ${valueSize(p_size)}`).catch(e=>console.log("new error thrown sending pSize")); 
+    const msg = await ctx.telegram.sendMessage(chat_id, `Размер члена @${ctx.message?.from?.username ?? ""} - ${p_size} см ${valueSize(p_size)}`).catch(e=>console.log("new error thrown sending pSize")); 
     store.set(`last-date-${chat_id}-${ctx.from?.id}`, new Date().setHours(0,0,0,0))
     updateRate(chat_id, ctx.from?.id, p_size, ctx.from?.username)
 }
@@ -69,11 +71,11 @@ const sendPenis = async (ctx)=> {
 function updateRate(group_id, person_id, penis_size, username){
     let {avg, count} = store.get(`avg-sizes.g${group_id}.p${person_id}`) ?? {}
 
-    if (!avg || !count ) return store.set(`avg-sizes.g${group_id.toString()}.p${person_id.toString()}`,{username, avg: penis_size, count: 1})
+    if (!avg || !count ) return store.set(`avg-sizes.g${group_id.toString()}.p${person_id.toString()}`,{username, avg: penis_size, count: 1, last: penis_size})
 
     avg = (avg*count+penis_size)/(++count)
 
-    store.set(`avg-sizes.g${group_id}.p${person_id}`,{username, avg, count})
+    store.set(`avg-sizes.g${group_id}.p${person_id}`,{username, avg, count, last: penis_size})
 
 
 }

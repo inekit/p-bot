@@ -16,12 +16,12 @@ module.exports = class Cron {
 
 	async checkTodayBD() {
         const groups = await DB().getTodaysBD()
-        groups.forEach(group=>{
+        groups?.forEach(group=>{
             console.log(group)
             const entries = Object.entries(group.usernames)
             const celebratorsStr = entries.reduce((prev, cur, i) => `${prev}@${cur[1] ?? cur[0]}\n`, `Сегодня отмечают свой день рождения:\n`)
             this.ctx.telegram.sendMessage(group.group_id,celebratorsStr)
-            entries.forEach(async entry=>{
+            entries?.forEach(async entry=>{
                 await DB().setCelebrated(entry[0],group.group_id)
             })
            

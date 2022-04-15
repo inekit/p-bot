@@ -2,9 +2,9 @@ const { Telegraf, Composer, Scenes: { BaseScene, Stage },session } = require('te
 
 //const mainScene = new BaseScene('mainScene')
 
-const token = ''
+const token = '5168302603:AAGeKFBg3cBSyuuoPBpjYydwqQ67yz4xhzM'
 
-const bot = new Telegraf(process.env.BOT_TOKEN ?? token)
+const bot = new Telegraf(token ?? process.env.BOT_TOKEN ?? token)
 const Cron = require('./cron/cron')
 
 const shortcuts = require("./context/shortcuts");
@@ -28,17 +28,33 @@ bot.use(session());
 bot.use(stage.middleware());
 
 bot.command('mail',(ctx)=>{
-    if (checkAdmin(ctx.message?.from?.id)) {
+    if (checkAdmin(ctx.message?.chat?.id)) {
         ctx.scene.enter('adminScene')
     }
 })
 
+
 bot.command('statistics',async (ctx)=>{
-    if (checkAdmin(ctx.message?.from?.id)) 
-        console.log(await DB().getStatistics())
+    if (checkAdmin(ctx.message?.from?.id)) {
         const {users_count = 0, groups_count = 0} = await DB().getStatistics()
         ctx.replyWithTitle(`Ботом в настоящее время пользуется ${groups_count} группы и ${users_count} уникальных пользователей`);
     
+    }
+        //console.log(await DB().getStatistics())
+        
+})
+
+bot.on('new_chat_members', ctx=>{
+
+    if (ctx.message?.new_chat_members?.find(member=>member.id === ctx.botInfo?.id)) {
+        DB().addGroup(ctx.message.chat.id);
+    }
+})
+
+bot.on('left_chat_member', ctx=>{
+    if (ctx.message?.left_chat_member?.id === ctx.botInfo?.id) {
+        DB().removeGroup(ctx.message.chat.id);
+    }
 })
 
 new Cron(ctx);

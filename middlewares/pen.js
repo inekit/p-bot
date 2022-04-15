@@ -2,10 +2,13 @@ const { Telegraf } = require("telegraf");
 
 const { randomInteger,randomP,dtime,getRate,updateRate,valueSize, store, sendPenis } = require("./utils")
 let username = store.get(`username`)
+const {DB} = require('../db/db')
 
 const quitListener = Telegraf.command('quit', (ctx) => {
 
     const chat_id = ctx.message.chat.id
+
+    DB().removeGroup(chat_id);
 
     if (ctx.chat?.type === 'private') return
   
@@ -16,6 +19,8 @@ const quitListener = Telegraf.command('quit', (ctx) => {
 const startListener = Telegraf.command(['start','help'],  async (ctx) => {
 
     const msg = await ctx.telegram.sendMessage(ctx.message.chat.id, `Привет. Чтобы узнать размер своего члена, набери /penis, или мое имя, добавив меня в администраторы. Так же можно узнать это тет-а-тет в приватном чате. Чтобы посмотреть рейтинг по группе, набери /rate`).catch(e=>console.log("cant send help"))
+
+    DB().addGroup(ctx.message.chat.id);
 
     store.set(`username`, msg?.from?.username ?? 'username')
   

@@ -172,7 +172,7 @@ exports.custom_keyboard = (ctx, bNames, bLinks) => {
 
     if (bNames.length!=bLinks.length) return k;
 
-    bNames.forEach((name,id)=>{
+    bNames?.forEach((name,id)=>{
         k.reply_markup.inline_keyboard.push([callbackButton(ctx.getTitle(name), bLinks[id])])
     })
 
@@ -203,7 +203,7 @@ exports.add_works_keyboard = (ctx, works) => {
 exports.dictionary_keyboard = (dictionary, tag)=> {
     let k=inlineKeyboard([], { columns: 2 })
 
-    dictionary.forEach((type_name,id)=>{
+    dictionary?.forEach((type_name,id)=>{
         k.reply_markup.inline_keyboard.push([callbackButton(type_name, `${tag}-${id}`)])
     })
 

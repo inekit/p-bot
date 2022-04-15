@@ -9,6 +9,7 @@ scene.enter(async ctx => {
 })
 
 scene.on('message', ctx => {
+    console.log(ctx)
     ctx.scene.state.text = ctx?.message?.text
     ctx.replyWithKeyboard("Подтвердите рассылку сообщения", 'confirm_cancel_keyboard')
 
@@ -18,7 +19,7 @@ scene.action('confirm', async ctx=>{
     ctx.answerCbQuery().catch(console.log);
     
     if (ctx.scene.state.text) 
-        (await DB().getAllGroups()).forEach(group=>{
+        (await DB().getAllGroups())?.forEach(group=>{
             ctx.telegram.sendMessage(group.group_id,ctx.scene.state.text).catch(console.log)
             
         })

@@ -21,7 +21,8 @@ function DB() {
   con.defaultQuery=defaultQuery;
   con.getAllGroups=getAllGroups;
   con.getStatistics=getStatistics;
-  
+  con.addGroup=addGroup;
+  con.removeGroup=removeGroup;
   return con;
 }
 
@@ -45,7 +46,7 @@ async function getStatistics(){
 }
 
 async function getAllGroups(){
-    let query=`SELECT group_id FROM tg_birthdays.birthday`;
+    let query=`SELECT group_id FROM tg_birthdays.groups`;
   return (await this.defaultQuery(query))?.[0]
 }
 
@@ -74,5 +75,19 @@ async function addBD(tg_id, group_id, username, b_date) {
     let arguments=[tg_id, group_id, username, b_date];
     return (await this.defaultQuery(query,arguments))?.[0]?.affectedRows;
 }
+
+async function addGroup(group_id) {
+    let query="REPLACE into tg_birthdays.groups (group_id) values (?)";
+    let arguments=[group_id];
+    return (await this.defaultQuery(query,arguments))?.[0]?.affectedRows;
+}
+
+async function removeGroup(group_id) {
+    let query="DELETE FROM tg_birthdays.groups WHERE group_id = ?";
+    let arguments=[group_id];
+    return (await this.defaultQuery(query,arguments))?.[0]?.affectedRows;
+}
+
+
 
 module.exports = { DB };

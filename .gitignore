@@ -1,3 +1,3 @@
-store.js
+store.json
 config.js
-node_modules
+db/store.json
