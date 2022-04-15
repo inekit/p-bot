@@ -1,6 +1,9 @@
 {
   "dependencies": {
     "edit-json-file": "^1.7.0",
+    "moment": "^2.29.2",
+    "mysql2": "^2.3.3",
+    "node-cron": "^3.0.0",
     "telegraf": "^4.7.0"
   },
   "name": "tg-penis",

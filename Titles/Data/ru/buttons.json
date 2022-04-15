@@ -1,0 +1,176 @@
+{
+
+	"ADD_SHEDLE_ENTRY": "Добавить запись",
+
+	"BUTTON_ADD_CONTACT": "Добавить контакт",
+
+	"BUTTON_ADD_METHOD": "Добавить способ связи",
+
+	"BUTTON_ADD_CERTIFICATE": "Добавить сертификат",
+
+	"BUTTON_CONFIRM": "Подтвердить",
+
+	"BUTTON_CANCEL": "Отменить",
+
+	"BUTTON_ADD_ORDER": "Добавить заказ",
+
+	"BUTTON_ADD_CLIENT": "Зарегистрировать клиента",
+
+	"BUTTON_APPROVE": "Одобрить",
+
+	"BUTTON_DELETE": "Удалить",
+
+	"BUTTON_CHANGE_REGION": "Регион",
+
+	"BUTTON_CHANGE_CITY": "Город",
+
+	"BUTTON_CHANGE_DISTRICT": "Район",
+
+	"BUTTON_CHANGE_ADDRESS": "Адрес",
+
+	"BUTTON_PREVIOUS": "Предыдущий шаг",
+
+	"BUTTON_UPDATE": "Изменить",
+
+	"BUTTON_SET_LEAD": "Назначить исполнителя",
+	
+	"BUTTON_SET_STATUS": "Изменить статус",
+	
+	"BUTTON_ORDER_DTIMES": "Даты выполнения",
+
+	"BUTTON_ORDER_CONTENT": "Содержание",
+
+	"BUTTON_ORDER_ADRESS": "Адрес",
+
+	"BUTTON_ORDER_HEADER": "Заголовок",
+
+	"BUTTON_RELOAD": "Обновить",
+
+	"BUTTON_GO_BACK": "Назад",
+
+	"BUTTON_SKIP": "Пропустить",
+
+	"BUTTON_ORDERS": "Заказы",
+
+	"BUTTON_CLIENTS": "Клиенты",
+
+	"BUTTON_ALPINISTS": "Исполнители",
+
+	"BUTTON_AGENT_PROFILE": "Профиль",
+
+	"BUTTON_CHOOSE_ROLE": "Выбрать роль",
+
+	"BUTTON_ADD_ADD": "Разослать рекламу",
+
+	"BUTTON_CLAIMS": "Жалобы",
+
+	"BUTTON_CONFIRM_USERS": "Проверка сертификатов",
+
+	"BUTTON_SHEDLE": "Расписание",
+
+	"BUTTON_OFFERS": "Предложения по работе",
+
+	"BUTTON_ALPINIST_PROFILE": "Профиль",
+
+	"BUTTON_MAIN_MENU": "Изменить роль",
+
+	"BUTTON_AGENT_MENU": "Контрактор",
+
+	"BUTTON_REGISTER_AGENT": "Рег. как контрактор",
+
+	"BUTTON_ALPINIST_MENU": "Исполнитель",
+
+	"BUTTON_CITY": "По области",
+
+	"BUTTON_REGION": "По стране",
+
+	"NO": "Не готов",
+
+	"CONTINUE": "Продолжить",
+
+	"START_NEW": "Начать заново",
+
+	"BUTTON_REGISTER_ALPINIST": "Рег. как исполнитель",
+
+	"BUTTON_ADMIN_MENU": "Администрирование",
+
+	"BUTTON_BACK_ADMIN": "В меню администратора",
+
+	"BUTTON_BACK_ALPINIST": "В меню исполнителя",
+
+	"BUTTON_BACK_AGENT": "В меню контрактора",
+
+	"BUTTON_MIGRATE": "Сменить аккаунт",
+
+	"BUTTON_PAY_ALPINIST": "Напрямую исполнителю",
+
+	"BUTTON_ADD_ADDRESS": "Добавить город",
+
+	"BUTTON_PAY_AGENT": "Через контрактора",
+
+	"BUTTON_NAME": "Имя",
+
+	"ADD_COMMENT": "Свои условия",
+
+	"SUBMIT": "Я согласен",
+
+	"BUTTON_PHONE_NUMBER": "Номер телефона",
+
+	"BUTTON_CONTRACT_TYPE": "Тип контракта",
+	
+	"BUTTON_HEADER": "Заголовок",
+
+	"BUTTON_DTIME_START": "Время начала",
+
+	"BUTTON_DTIME_FINISH": "Время окончания",
+
+	"BUTTON_UPDATE_CERTIFICATE": "Обновить сертификат",
+
+	"BUTTON_BACK": "Назад",
+
+	"BUTTON_CERTIFICATE": "Cертификат",
+
+	"BUTTON_ADMINS": "Администраторы",
+
+	"BUTTON_ADD_ADMIN": "Добавить",
+
+	"BUTTON_DELETE_ADMIN": "Удалить",
+
+	"BUTTON_SET_COMPLETED": "Завершить",
+
+	"BUTTON_ADD_CLAIM": "Жалоба",
+
+	"BUTTON_SEND_ORDER": "Предложить",
+
+	"BUTTON_WORKS":  "Виды работ",
+
+	"BUTTON_EDUCATION_TYPE": "Образование",
+
+	"BUTTON_AVG_PRICE": "Ср. цена за смену",
+
+	"BUTTON_STUDY_DIRECTION": "Специальность",
+
+	"BUTTON_ADDRESS": "Город",
+
+	"BUTTON_TRIP_OPPORTUNITY": "Возможность командировки",
+
+	"BUTTON_5S": "⭐️⭐️⭐️⭐️⭐️",
+
+	"BUTTON_4S": "⭐️⭐️⭐️⭐️",
+
+	"BUTTON_3S": "⭐️⭐️⭐️",
+
+	"BUTTON_2S": "⭐️⭐️",
+
+	"BUTTON_1S": "⭐️",
+
+	"BUTTON_SEND_RES" : "Рассмотреть",
+
+	"BUTTON_REFUSE": "Отклонить",
+
+	"BUTTON_ENOUGH": "Достаточно",
+
+	"BUTTON_SEND_TO_ALPINISTS": "Выбрать исполнителя"
+
+	
+}
